@@ -47,6 +47,7 @@ module.exports = {
       }
     ]
   },
+  router: { base: '/myblog/' },
   /*
   ** Customize the progress-bar color
   */

@@ -19,7 +19,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=master --cleanup"
   },
   "devDependencies": {
     "@types/node": "^9.4.6",
@@ -32,6 +33,7 @@
     "eslint-plugin-promise": "^4.0.0",
     "eslint-plugin-standard": "^3.1.0",
     "node-sass": "^4.9.3",
+    "push-dir": "^0.4.1",
     "sass-loader": "^7.1.0",
     "ts-loader": "^3.5.0",
     "typescript": "^2.7.2"
