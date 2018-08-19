@@ -1,0 +1,39 @@
+{
+  "name": "frank-pp-blog",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/markdownit": "^1.2.1",
+    "bootstrap-vue": "^2.0.0-rc.11",
+    "element-ui": "^2.4.6",
+    "lodash": "^4.17.10",
+    "markdown-it-highlightjs": "^3.0.0",
+    "nuxt": "^1.3.0",
+    "nuxt-property-decorator": "^1.2.0",
+    "vue-disqus": "^3.0.4",
+    "vuex-class": "^0.3.0"
+  },
+  "scripts": {
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "nuxt start",
+    "generate": "nuxt generate"
+  },
+  "devDependencies": {
+    "@types/node": "^9.4.6",
+    "babel-eslint": "^8.2.6",
+    "eslint": "^5.4.0",
+    "eslint-config-standard": "^11.0.0",
+    "eslint-plugin-html": "^4.0.5",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-node": "^7.0.1",
+    "eslint-plugin-promise": "^4.0.0",
+    "eslint-plugin-standard": "^3.1.0",
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
+    "ts-loader": "^3.5.0",
+    "typescript": "^2.7.2"
+  }
+}
