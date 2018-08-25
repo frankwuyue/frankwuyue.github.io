@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div v-html="html"></div>
+    <fr-header></fr-header>
+    <fr-content></fr-content>
   </div>
 </template>
 
 <script>
-const markdown = require('../static/markdown/test.md');
-
-export default class extends Vue {
-  get html() {
-    return markdown;
-  }
-}
+import FrHeader from "../components/FrHeader";
+import FrContent from "../components/FrContent";
+export default {
+  name: "app",
+  components: { FrHeader, FrContent }
+};
 </script>
+
+<style>
+
+</style>

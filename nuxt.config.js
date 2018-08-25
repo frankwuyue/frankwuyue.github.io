@@ -47,7 +47,6 @@ module.exports = {
       }
     ]
   },
-  router: { base: '/myblog/' },
   /*
   ** Customize the progress-bar color
   */
@@ -56,11 +55,17 @@ module.exports = {
   ** Build configuration
   */
   css: [
-    '~/assets/css/main.scss',
+    '~/assets/css/main.css',
     'element-ui/lib/theme-chalk/index.css',
-    { src: '~/node_modules/highlight.js/styles/hopscotch.css', lang: 'css' }
+    '~/node_modules/highlight.js/styles/hopscotch.css',
+    '~/assets/scss/main.scss'
   ],
-  build: {},
+  build: {
+    extend (config, { isDev, isClient }) {
+      const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
+      vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader'
+    }
+  },
   modules: [
     '@nuxtjs/axios',
     '~/modules/typescript.js',
