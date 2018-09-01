@@ -16,15 +16,16 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "dev": "nuxt",
+    "dev": "cross-env HOST=localhost PORT=3000 BASE_URL=http://localhost:3000 nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate",
+    "generate": "cross-env HOST=0.0.0.0 PORT=8080 BASE_URL=https://frankwuyue.github.io/nuxt-blog/ nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
     "@types/node": "^9.4.6",
     "babel-eslint": "^8.2.6",
+    "cross-env": "^5.2.0",
     "eslint": "^5.4.0",
     "eslint-config-standard": "^11.0.0",
     "eslint-plugin-html": "^4.0.5",
