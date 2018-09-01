@@ -25,7 +25,7 @@ module.exports = {
       `http://${host}:${port}`
   },
   router: {
-    base: process.env.NODE_ENV !== 'prod' ? '' : '/nuxt-blog/'
+    base: process.env.NODE_ENV !== 'prod' ? '' : '/nuxt-blog'
   },
   head: {
     title: 'Frank\'s HomePage',
