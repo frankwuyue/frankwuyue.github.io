@@ -8,10 +8,23 @@ const argv = parseArgs(process.argv.slice(2), {
   unknown: parameter => false
 })
 
+const port =
+  argv.port ||
+  process.env.PORT ||
+  process.env.npm_package_config_nuxt_port ||
+  '3000'
+const host =
+  argv.hostname ||
+  process.env.HOST ||
+  process.env.npm_package_config_nuxt_host ||
+  'localhost'
+const baseUrlConfig = {
+  baseUrl: process.env.NODE_ENV !== 'prod' ? `http://${host}:${port}` : `https://frankwuyue.github.io/nuxt-blog/`
+}
+
 module.exports = {
   env: {
-    baseUrl:
-      process.env.BASE_URL
+    baseUrl: baseUrlConfig
   },
   head: {
     title: 'Frank\'s HomePage',

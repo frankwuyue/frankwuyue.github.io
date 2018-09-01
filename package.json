@@ -16,10 +16,10 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "dev": "cross-env HOST=localhost PORT=3000 BASE_URL=http://localhost:3000 nuxt",
-    "build": "nuxt build",
+    "dev": "cross-env NODE_ENV=dev nuxt",
+    "build": "cross-env NODE_ENV=dev nuxt build",
     "start": "nuxt start",
-    "generate": "cross-env HOST=0.0.0.0 PORT=8080 BASE_URL=https://frankwuyue.github.io/nuxt-blog/ nuxt generate",
+    "generate": "cross-env NODE_ENV=prod nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
