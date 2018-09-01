@@ -18,13 +18,14 @@ const host =
   process.env.HOST ||
   process.env.npm_package_config_nuxt_host ||
   'localhost'
-const baseUrlConfig = {
-  baseUrl: process.env.NODE_ENV !== 'prod' ? `http://${host}:${port}` : `https://frankwuyue.github.io/nuxt-blog/`
-}
-
 module.exports = {
   env: {
-    baseUrl: baseUrlConfig
+    baseUrl:
+      process.env.BASE_URL ||
+      `http://${host}:${port}`
+  },
+  router: {
+    base: process.env.NODE_ENV !== 'prod' ? '' : '/nuxt-blog/'
   },
   head: {
     title: 'Frank\'s HomePage',

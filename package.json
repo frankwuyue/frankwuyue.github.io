@@ -16,10 +16,10 @@
   },
   "scripts": {
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "dev": "cross-env NODE_ENV=dev nuxt",
-    "build": "cross-env NODE_ENV=dev nuxt build",
+    "dev": "cross-env NODE_ENV='dev' nuxt",
+    "build": "cross-env NODE_ENV='dev' nuxt build",
     "start": "nuxt start",
-    "generate": "cross-env NODE_ENV=prod nuxt generate",
+    "generate": "cross-env NODE_ENV='prod' nuxt generate",
     "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "devDependencies": {
