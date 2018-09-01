@@ -61,7 +61,7 @@ export default class FrHeader extends Vue {
   backGroundImg: string;
 
   get backGroundImgPath() {
-    return "/img/" + this.backGroundImg + ".jpg";
+    return require('~/assets/img/' + this.backGroundImg + '.jpg')
   }
 }
 </script>

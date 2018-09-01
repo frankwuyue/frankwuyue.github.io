@@ -39,14 +39,7 @@ module.exports = {
       {
         hid: 'description',
         name: 'description',
-        content: 'Nuxt.js project'
-      }
-    ],
-    link: [
-      {
-        rel: 'icon',
-        type: 'image/x-icon',
-        href: '/favicon.ico'
+        content: 'Frank\'s HomePage'
       }
     ]
   },
@@ -67,6 +60,7 @@ module.exports = {
     extend (config, { isDev, isClient }) {
       const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
       vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader'
+      vueLoader.options.transformToRequire['img'] = ['style']
     }
   },
   modules: [
