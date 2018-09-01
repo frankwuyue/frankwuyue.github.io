@@ -21,7 +21,7 @@ const host =
 module.exports = {
   env: {
     baseUrl:
-      process.env.BASE_URL ||
+      `https://frankwuyue.github.io/nuxt-blog/` ||
       `http://${host}:${port}`
   },
   head: {
@@ -79,6 +79,7 @@ module.exports = {
   plugins: [
     '@/plugins/element-ui'
   ],
+  performance: { hints: false },
   markdownit: {
     preset: 'default',
     linkify: true,
