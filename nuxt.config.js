@@ -27,6 +27,9 @@ module.exports = {
   router: {
     base: process.env.NODE_ENV !== 'prod' ? '' : '/nuxt-blog'
   },
+  configureWebpack: {
+    devtool: 'source-map'
+  },
   head: {
     title: 'Frank\'s HomePage',
     meta: [
@@ -61,6 +64,9 @@ module.exports = {
       const vueLoader = config.module.rules.find((rule) => rule.loader === 'vue-loader')
       vueLoader.options.loaders.sass = 'vue-style-loader!css-loader!sass-loader'
       vueLoader.options.transformToRequire['img'] = ['style']
+      config.node = {
+        fs: 'empty'
+      }
     }
   },
   modules: [

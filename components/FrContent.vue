@@ -1,31 +1,28 @@
 <template>
-  <div class="col-lg-8 col-md-10 mx-auto">
-    <div class="post-preview">
-      <a href="post.html">
-        <h2 class="post-title">
-          Man must explore, and this is exploration at its greatest
-        </h2>
-        <h3 class="post-subtitle">
-          Problems look mighty small from 150 miles up
-        </h3>
-      </a>
-      <p class="post-meta">Posted by
-        <a href="#">Start Bootstrap</a>
-        on September 24, 2018</p>
-    </div>
-    <!-- Pager -->
-    <div class="clearfix">
-      <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-    </div>
+  <div class="post-preview">
+    <a href="post.html">
+      <h2 class="post-title">
+      {{entry.name}}
+      </h2>
+    </a>
+    <p class="post-meta"
+      v-if="entry.server_modified">Posted on {{timeModified}}
+    </p>
   </div>
 </template>
 
 
 <script lang="ts">
+import * as moment from 'moment';
 import { Component, Prop, Vue } from "nuxt-property-decorator";
 @Component
 export default class FrContent extends Vue {
+  @Prop() entry
   name: 'fr-content'
+
+  get timeModified() {
+    return moment(this.entry.server_modified).format('YYYY-MM-DD HH:mm');
+  }
 }
 </script>
 
