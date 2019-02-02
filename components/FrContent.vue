@@ -1,10 +1,8 @@
 <template>
   <div class="post-preview">
-    <a href="post.html">
-      <h2 class="post-title">
-      {{entry.name}}
-      </h2>
-    </a>
+    <h2 class="post-title">
+      <nuxt-link :to="{ name: 'slug', params: { slug: entry.name }}">{{nameNoExtension}}</nuxt-link>
+    </h2>
     <p class="post-meta"
       v-if="entry.server_modified">Posted on {{timeModified}}
     </p>
@@ -14,13 +12,17 @@
 
 <script lang="ts">
 import * as moment from 'moment';
-import { Component, Prop, Vue } from "nuxt-property-decorator";
+import _ from 'lodash';
+import { Component, Prop, Vue } from 'nuxt-property-decorator';
 @Component
 export default class FrContent extends Vue {
-  @Prop() entry
-  name: 'fr-content'
+  @Prop() entry;
+  name: "fr-content";
 
-  get timeModified() {
+  get nameNoExtension () {
+    return _.split(this.entry.name, '.', 1).join('');
+  }
+  get timeModified () {
     return moment(this.entry.server_modified).format('YYYY-MM-DD HH:mm');
   }
 }

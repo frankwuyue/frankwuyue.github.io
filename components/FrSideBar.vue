@@ -30,10 +30,10 @@
 
 
 <script lang="ts">
-import { Component, Prop, Vue } from "nuxt-property-decorator";
+import { Component, Vue } from 'nuxt-property-decorator';
 @Component
 export default class FrSideBar extends Vue {
-  name: 'fr-side-bar'
+  name: "fr-side-bar";
 }
 </script>
 

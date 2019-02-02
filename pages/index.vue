@@ -22,15 +22,11 @@
 </template>
 
 <script lang="ts">
-import FrHeader from "../components/FrHeader.vue";
-import FrSideBar from "../components/FrSideBar.vue";
-import FrContent from "../components/FrContent.vue";
-import {
-  Component,
-  Prop,
-  Vue
-} from "nuxt-property-decorator";
-import { State } from "vuex-class"
+import FrHeader from '../components/FrHeader.vue';
+import FrSideBar from '../components/FrSideBar.vue';
+import FrContent from '../components/FrContent.vue';
+import { Component, Vue } from 'nuxt-property-decorator';
+import { State } from 'vuex-class';
 @Component({
   components: {
     FrHeader,
@@ -39,19 +35,17 @@ import { State } from "vuex-class"
   }
 })
 export default class Home extends Vue {
-  @State structure
-  data() {
+  @State structure;
+  data () {
     return {
-      name: "home",
-      head: "Frank Blog",
-      subHead: "A Blog About Tech",
-      backGroundImg: "home-bg",
+      name: 'home',
+      head: 'Frank Blog',
+      subHead: 'A Blog About Tech',
+      backGroundImg: 'home-bg'
     };
   }
-
 }
 </script>
 
 <style>
-
 </style>

@@ -6,12 +6,12 @@
 
 
 <script lang='ts'>
-import { Component, Prop, Vue } from "nuxt-property-decorator";
-const markdown = require("../static/markdown/about.md");
+import { Component, Vue } from 'nuxt-property-decorator';
+const markdown = require('../static/markdown/about.md');
 @Component
 export default class FrPost extends Vue {
-  name : 'fr-post'
-  get html() {
+  name: "fr-post";
+  get html () {
     return markdown;
   }
 }
