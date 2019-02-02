@@ -1,7 +1,6 @@
 import "isomorphic-fetch";
 import { Dropbox } from "dropbox";
-import { DropboxTeam } from "dropbox";
-import { TOKEN_DROPBOX } from "../env";
+import * as TOKEN_DROPBOX from "../env";
 import fs from "file-system";
 import unzipper from "unzipper";
 import _ from "lodash";
