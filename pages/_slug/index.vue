@@ -33,7 +33,7 @@ export default class Post extends Vue {
     };
   }
   get html () {
-    return require(`static/markdown/posts/${this.$route.params.slug}`);
+    return require(`~/content/posts/${this.$route.params.slug}`);
   }
 }
 </script>
