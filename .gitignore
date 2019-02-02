@@ -17,5 +17,5 @@ dist
 .env
 
 # markdown post
-content/posts/*
-content/*.zip
+static/markdown/posts/*
+static/*.zip

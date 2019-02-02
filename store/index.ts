@@ -32,11 +32,11 @@ export const actions = {
       .filesDownloadZip({ path: "/posts" })
       .then(response => {
         let blob = (<any>response).fileBinary;
-        fs.writeFile("content/post.zip", blob, err => {
+        fs.writeFile("static/post.zip", blob, err => {
           if (err) console.log(err);
           console.log("post.zip saved");
-          fs.createReadStream("content/post.zip").pipe(
-            unzipper.Extract({ path: "content" })
+          fs.createReadStream("static/post.zip").pipe(
+            unzipper.Extract({ path: "static/markdown" })
           );
           console.log("post.zip unzipped");
         });
