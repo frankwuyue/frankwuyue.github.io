@@ -22,6 +22,7 @@ const host =
   process.env.npm_package_config_nuxt_host ||
   'localhost';
 module.exports = {
+  mode: 'spa',
   env: {
     baseUrl: process.env.BASE_URL || `http://${host}:${port}`
   },
@@ -99,7 +100,10 @@ module.exports = {
       });
       return dropbox.filesListFolder({ path: '/posts' }).then(response => {
         return response.entries.map(entry => {
-          return '/' + entry.name;
+          return {
+            route: '/' + entry.name,
+            payload: entry
+          };
         });
       });
     }
